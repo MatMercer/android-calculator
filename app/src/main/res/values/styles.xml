@@ -50,4 +50,14 @@
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
     </style>
+
+    <style name="CalculatorScreen" parent="@android:style/Widget.EditText">
+        <item name="android:gravity">right|bottom</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">64sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:editable">false</item>
+    </style>
 </resources>
