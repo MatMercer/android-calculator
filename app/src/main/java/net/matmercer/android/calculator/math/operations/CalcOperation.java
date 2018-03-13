@@ -1,4 +1,4 @@
-package net.matmercer.android.calculator.math;
+package net.matmercer.android.calculator.math.operations;
 
 import java.math.BigDecimal;
 

@@ -24,9 +24,6 @@
             android:layout_height="match_parent"
             android:layout_margin="0dp"
             android:capitalize="characters"
-            android:contextClickable="false"
-            android:cursorVisible="false"
-            android:defaultFocusHighlightEnabled="false"
             android:editable="false"
             android:text="TextView" />
     </LinearLayout>
@@ -51,6 +48,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_row="0"
             android:text="@string/btn_ce" />
 
         <Button
@@ -60,6 +59,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_row="0"
             android:text="@string/btn_delete" />
 
         <Button
@@ -69,15 +70,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
-            android:text="@string/btn_square" />
-
-        <Button
-            style="@style/OperationButton"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_row="0"
             android:text="@string/btn_division" />
 
         <Button
@@ -87,6 +81,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_row="1"
             android:text="@string/btn_7" />
 
         <Button
@@ -96,6 +92,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_row="1"
             android:text="@string/btn_8" />
 
         <Button
@@ -105,6 +103,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_row="1"
             android:text="@string/btn_9" />
 
         <Button
@@ -114,6 +114,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="3"
+            android:layout_row="0"
             android:text="@string/btn_times" />
 
         <Button
@@ -123,6 +125,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_row="2"
             android:text="@string/btn_4" />
 
         <Button
@@ -132,6 +136,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_row="2"
             android:text="@string/btn_5" />
 
         <Button
@@ -141,6 +147,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_row="2"
             android:text="@string/btn_6" />
 
         <Button
@@ -150,6 +158,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="3"
+            android:layout_row="1"
             android:text="@string/btn_minus" />
 
         <Button
@@ -159,6 +169,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_row="3"
             android:text="@string/btn_1" />
 
         <Button
@@ -168,6 +180,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_row="3"
             android:text="@string/btn_2" />
 
         <Button
@@ -177,6 +191,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_row="3"
             android:text="@string/btn_3" />
 
         <Button
@@ -186,6 +202,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="3"
+            android:layout_row="2"
             android:text="@string/btn_plus" />
 
         <Button
@@ -195,7 +213,11 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
-            android:text="@string/btn_0" />
+            android:layout_column="1"
+            android:layout_row="4"
+            android:text="@string/btn_0"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="579dp" />
 
         <Button
             style="@style/NumberButton"
@@ -204,6 +226,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_row="4"
             android:text="@string/btn_dot" />
 
         <Button
@@ -213,6 +237,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_row="4"
             android:text="@string/btn_negate" />
 
         <Button
@@ -222,6 +248,9 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="3"
+            android:layout_row="3"
+            android:layout_rowSpan="2"
             android:text="@string/btn_equals" />
 
     </GridLayout>

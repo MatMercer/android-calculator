@@ -1,11 +1,9 @@
 package net.matmercer.android.calculator.math;
 
+import net.matmercer.android.calculator.math.operations.CalcOperation;
+
 import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Deque;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 public abstract class Calculator {

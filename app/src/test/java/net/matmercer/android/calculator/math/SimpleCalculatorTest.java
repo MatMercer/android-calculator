@@ -4,11 +4,15 @@ import android.support.annotation.NonNull;
 
 import junit.framework.Assert;
 
+import net.matmercer.android.calculator.math.operations.CalcOperation;
+import net.matmercer.android.calculator.math.operations.DivideOperation;
+import net.matmercer.android.calculator.math.operations.SubtractOperation;
+import net.matmercer.android.calculator.math.operations.SumOperation;
+import net.matmercer.android.calculator.math.operations.TimesOperation;
+
 import org.junit.Test;
 
 import java.math.BigDecimal;
-
-import static org.junit.Assert.*;
 
 public class SimpleCalculatorTest {
     @NonNull

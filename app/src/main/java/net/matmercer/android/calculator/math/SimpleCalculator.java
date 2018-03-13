@@ -1,5 +1,7 @@
 package net.matmercer.android.calculator.math;
 
+import net.matmercer.android.calculator.math.operations.CalcOperation;
+
 import java.math.BigDecimal;
 
 public class SimpleCalculator extends Calculator {
