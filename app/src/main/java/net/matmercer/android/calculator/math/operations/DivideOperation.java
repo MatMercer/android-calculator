@@ -22,6 +22,7 @@ public class DivideOperation extends CalcOperation {
 
     @Override
     public BigDecimal solve() {
-        return x.divide(y, 9, BigDecimal.ROUND_HALF_EVEN);
+        // TODO: remove hardcoded precision
+        return x.divide(y, 64, BigDecimal.ROUND_HALF_EVEN);
     }
 }

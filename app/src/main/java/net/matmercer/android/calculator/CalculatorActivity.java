@@ -164,7 +164,7 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     private void updateScreen(BigDecimal bigDecimal) {
-        calculatorScreen.setText(bigDecimal.toPlainString());
+        calculatorScreen.setText(bigDecimal.stripTrailingZeros().toPlainString());
     }
 
     private void equals() {
