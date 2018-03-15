@@ -21,7 +21,6 @@ public class CalculatorActivity extends AppCompatActivity {
     private BigDecimal lastNumber;
     private int lastOperationId;
 
-
     private enum OperationState {
         INITIAL,
         MIDDLE,
@@ -45,7 +44,8 @@ public class CalculatorActivity extends AppCompatActivity {
         if (operationState != OperationState.ERROR) {
             if (operationState == OperationState.MIDDLE) {
                 calculatorScreen.getText().clear();
-                operationState = OperationState.END;
+
+                setOperationState(OperationState.END);
             }
 
             // TODO: This looks like a bad practice...
@@ -78,10 +78,14 @@ public class CalculatorActivity extends AppCompatActivity {
     public void operationEvent(View view) {
         switch (operationState) {
             case INITIAL: {
-                lastNumber = currentNumber();
-                lastOperationId = view.getId();
+                try {
+                    lastNumber = currentNumber();
+                    lastOperationId = view.getId();
 
-                operationState = OperationState.MIDDLE;
+                    setOperationState(OperationState.MIDDLE);
+
+                }
+                catch (NumberFormatException ignored) {}
 
                 break;
             }
@@ -143,7 +147,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 }
 
                 // Makes the calc. waits for another number
-                operationState = OperationState.MIDDLE;
+                setOperationState(OperationState.MIDDLE);
                 // Sends the result to screen
                 updateScreen();
                 // Saves the result to future use
@@ -152,12 +156,30 @@ public class CalculatorActivity extends AppCompatActivity {
         } catch (ArithmeticException e) {
             error();
         }
-
     }
 
     @NonNull
-    private BigDecimal currentNumber() {
+    private BigDecimal currentNumber() throws NumberFormatException {
         return new BigDecimal(calculatorScreen.getText().toString());
+    }
+
+    private void setOperationState(OperationState operationState) {
+        switch (operationState) {
+            case INITIAL:
+                lastNumber = null;
+                lastOperationId = 0;
+                break;
+            case MIDDLE:
+                break;
+            case END:
+                break;
+            case ERROR:
+                calculatorScreen.setText(getResources().getString(R.string.calc_error));
+                calculatorScreen.setEnabled(false);
+                break;
+        }
+
+        this.operationState = operationState;
     }
 
     private void updateScreen() {
@@ -174,17 +196,13 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     private void error() {
-        operationState = OperationState.ERROR;
-        calculatorScreen.setText(getResources().getString(R.string.calc_error));
-        calculatorScreen.setEnabled(false);
+        setOperationState(OperationState.ERROR);
     }
 
     private void ce() {
-        calculatorScreen.getText().clear();
         calculator.ce();
-        operationState = OperationState.INITIAL;
-        lastNumber = null;
-        lastOperationId = 0;
+        calculatorScreen.getText().clear();
         calculatorScreen.setEnabled(true);
+        setOperationState(OperationState.INITIAL);
     }
 }
