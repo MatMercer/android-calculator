@@ -59,6 +59,10 @@ public class CalculatorActivity extends AppCompatActivity {
 
     public void eraseEvent(View view) {
         if (operationState != OperationState.ERROR) {
+            if (operationState == OperationState.MIDDLE) {
+                setOperationState(OperationState.INITIAL);
+            }
+
             int start, end;
 
             start = calculatorScreen.getSelectionStart();
@@ -168,6 +172,7 @@ public class CalculatorActivity extends AppCompatActivity {
             case INITIAL:
                 lastNumber = null;
                 lastOperationId = 0;
+                calculator.ce();
                 break;
             case MIDDLE:
                 break;
@@ -200,7 +205,6 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     private void ce() {
-        calculator.ce();
         calculatorScreen.getText().clear();
         calculatorScreen.setEnabled(true);
         setOperationState(OperationState.INITIAL);
