@@ -68,8 +68,6 @@ public class CalculatorActivity extends AppCompatActivity {
             start = calculatorScreen.getSelectionStart();
             end = calculatorScreen.getSelectionEnd();
 
-            System.out.println(start + ":" + end);
-
             if (start == end && start > 0) {
                 calculatorScreen.getText().delete(calculatorScreen.getSelectionStart() - 1,
                         calculatorScreen.getSelectionEnd());
@@ -113,17 +111,24 @@ public class CalculatorActivity extends AppCompatActivity {
         }
     }
 
-    private boolean screenEmpty() {
-        System.out.println(calculatorScreen.getText());
+    public void negateEvent(View view) {
+        if (calculator.isReady()) {
+            updateScreen(calculator.negate());
+        }
+        try {
+            BigDecimal number = currentNumber().negate();
 
-        return calculatorScreen.getText().length() == 0;
+            updateScreen(number);
+        }
+        catch (NumberFormatException ignore) {}
     }
+
+    /* Helper Methods */
 
     public void ceEvent(View view) {
         ce();
     }
 
-    /* Helper Methods */
     private void commitLastOperation() {
         try {
             // Commits last operation requested, if the current screen has a number to be used
@@ -202,6 +207,10 @@ public class CalculatorActivity extends AppCompatActivity {
 
     private void error() {
         setOperationState(OperationState.ERROR);
+    }
+
+    private boolean screenEmpty() {
+        return calculatorScreen.getText().length() == 0;
     }
 
     private void ce() {

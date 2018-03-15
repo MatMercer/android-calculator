@@ -276,6 +276,7 @@
             android:layout_gravity="fill"
             android:layout_row="4"
             android:layout_rowWeight="1"
+            android:onClick="negateEvent"
             android:text="@string/btn_negate" />
 
         <Button
