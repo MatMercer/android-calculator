@@ -91,6 +91,7 @@ public class CalculatorActivity extends AppCompatActivity {
             }
             case END: {
                 commitLastOperation();
+                lastOperationId = view.getId();
                 break;
             }
         }
@@ -165,6 +166,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
     private void updateScreen(BigDecimal bigDecimal) {
         calculatorScreen.setText(bigDecimal.stripTrailingZeros().toPlainString());
+        calculatorScreen.setSelection(calculatorScreen.getText().length());
     }
 
     private void equals() {
