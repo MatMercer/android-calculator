@@ -16,7 +16,7 @@ public abstract class Calculator {
         operations = new LinkedList<>();
     }
 
-    public abstract BigDecimal addOperation(CalcOperation op);
+    public abstract BigDecimal addOperation(CalcOperation op) throws ArithmeticException;
 
     public abstract BigDecimal equals();
 
@@ -26,5 +26,9 @@ public abstract class Calculator {
 
     public BigDecimal getCurrentScreen() {
         return currentScreen;
+    }
+
+    public boolean isReady() {
+        return operation != null;
     }
 }

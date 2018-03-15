@@ -3,14 +3,6 @@ package net.matmercer.android.calculator.math.operations;
 import java.math.BigDecimal;
 
 public abstract class CalcOperation {
-    public enum CalcType {
-        SUM,
-        SUBTRACT,
-        TIMES,
-        DIVIDE,
-        SQUAREROOT
-    }
-
     BigDecimal x, y;
 
     /**

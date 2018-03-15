@@ -41,5 +41,6 @@ public class SimpleCalculator extends Calculator {
     @Override
     public void ce() {
         currentScreen = null;
+        operation = null;
     }
 }

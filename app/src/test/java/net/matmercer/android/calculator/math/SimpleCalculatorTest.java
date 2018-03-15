@@ -6,9 +6,9 @@ import junit.framework.Assert;
 
 import net.matmercer.android.calculator.math.operations.CalcOperation;
 import net.matmercer.android.calculator.math.operations.DivideOperation;
+import net.matmercer.android.calculator.math.operations.MultiplyOperation;
 import net.matmercer.android.calculator.math.operations.SubtractOperation;
 import net.matmercer.android.calculator.math.operations.SumOperation;
-import net.matmercer.android.calculator.math.operations.TimesOperation;
 
 import org.junit.Test;
 
@@ -39,7 +39,7 @@ public class SimpleCalculatorTest {
     public void addOperation() throws Exception {
         SimpleCalculator calculator = mockCalculator();
 
-        CalcOperation times100 = new TimesOperation(BigDecimal.valueOf(100d));
+        CalcOperation times100 = new MultiplyOperation(BigDecimal.valueOf(100d));
         CalcOperation divide7 = new DivideOperation(BigDecimal.valueOf(7d));
 
         calculator.addOperation(times100); // 1300
@@ -79,7 +79,7 @@ public class SimpleCalculatorTest {
         calculator.negate();
 
         // -26
-        calculator.addOperation(new TimesOperation(BigDecimal.valueOf(2)));
+        calculator.addOperation(new MultiplyOperation(BigDecimal.valueOf(2)));
         Assert.assertEquals(-26d, calculator.getCurrentScreen().doubleValue());
 
         calculator.negate();
